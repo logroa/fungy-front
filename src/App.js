@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
 import Closet from './components/Closet';
-require('dotenv').config()
+//require('dotenv').config()
 
 function App() {
   const coin = '../src/images/pixal-coin.svg';
-  const api_url = API_URL.concat('/api/shirts/');  //'https://nfteeshirts.herokuapp.com/api/shirts/';
+  const api_url = 'https://nfteeshirts.herokuapp.com/api/shirts/';
 
   return (
     <div className="App">

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './Shirt.css';
-require('dotenv').config()
+//require('dotenv').config()
 
 class Shirt extends React.Component {
     constructor(props) {

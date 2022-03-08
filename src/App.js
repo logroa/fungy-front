@@ -4,7 +4,7 @@ import Closet from './components/Closet';
 //require('dotenv').config()
 
 function App() {
-  const coin = '../src/images/pixal-coin.svg';
+  const coin = require('./assets/icons/pixal-coin.svg').default;
   const api_url = 'https://nfteeshirts.herokuapp.com/api/shirts/';
 
   return (

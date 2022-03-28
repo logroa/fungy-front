@@ -185,8 +185,8 @@ class Shirt extends React.Component {
         console.log(p1_url)
         */
 
-        let p1_url = require(`../assets/images/mjljw2022-front.JPEG`).default
-        let p2_url = require(`../assets/images/mjljw2022-back.JPEG`).default
+        let p1_url = process.env.PIC_S3.concat(pic1_img_url)
+        let p2_url = process.env.PIC_S3.concat(pic2_img_url)
 
         const shirtstyle = {
             backgroundColor: hex

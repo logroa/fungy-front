@@ -1,11 +1,10 @@
 import React from 'react';
 import './App.css';
 import Closet from './components/Closet';
-//require('dotenv').config()
 
 function App() {
   const coin = require('./assets/icons/pixal-coin.svg').default;
-  const api_url = 'https://nfteeshirts.herokuapp.com/api/shirts/';
+  const api_url = process.env.REACT_APP_BACKEND_URL.concat('/api/shirts/');
 
   return (
     <div className="App">

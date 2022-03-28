@@ -110,7 +110,7 @@ class Shirt extends React.Component {
                 }
             )
         };
-        const api_url = 'https://nfteeshirts.herokuapp.com/api/order/';
+        const api_url = process.env.REACT_APP_BACKEND_URL.concat('/api/order/');
         fetch(api_url, newOrder)
             .then((response) => {
                 if (!response.ok) throw Error(response.statusText);

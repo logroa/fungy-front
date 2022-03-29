@@ -137,6 +137,11 @@ class Shirt extends React.Component {
                 });
             })
             .catch((error) => console.log(error));
+
+        document.getElementById("shirtimages").style.display = "none";
+        document.getElementById("shirttext").style.display = "none";
+        document.getElementById("after").style.display = "block";
+
         event.preventDefault();
     }
 
@@ -182,6 +187,10 @@ class Shirt extends React.Component {
             backgroundColor: "#FFFFFF",
             color: hex
         }
+
+        let num = Math.floor(Math.random() * 6) + 1;
+        let gif_name = "mistake".concat(num.toString()).concat(".gif");
+
         if (hex == "#FFFFFF") {
             let bstyle = {
                 backgroundColor: "#000000",
@@ -224,7 +233,7 @@ class Shirt extends React.Component {
 
         return (
             <div className='shirt' style={shirtstyle}>
-                <div className='shirttext'>
+                <div id='shirttext'>
                     <p>{name}</p>
                     <p>${price}</p>
 
@@ -232,7 +241,7 @@ class Shirt extends React.Component {
                         Mint Yours
                     </button>
                 </div>
-                <div className='shirtimages'>
+                <div id='shirtimages'>
                     <div className='imagesonly'>
                         <div className='shirtbox'>
                             <img src={p1_url} alt={p1_url} className='shirtpic'/>
@@ -245,6 +254,9 @@ class Shirt extends React.Component {
                     </div>
 
                     {form}
+                </div>
+                <div id="after">
+                    <img src={process.env.PIC_S3.concat(gif_name)} alt={process.env.PIC_S3.concat(gif_name)} id="gif" />
                 </div>
             </div>
         );

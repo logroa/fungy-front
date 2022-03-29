@@ -8,11 +8,11 @@
     padding: 10px;
 }
 
-.shirttext {
+#shirttext {
     width: 50%;
 }
 
-.shirtimages {
+#shirtimages {
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -92,3 +92,6 @@ hr {
     cursor: pointer;
 }
 
+#after {
+    display: none;
+}

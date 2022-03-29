@@ -170,20 +170,6 @@ class Shirt extends React.Component {
     render() {
         const { id, name, pic1_img_url, pic1_title, pic2_img_url, pic2_title, price, available, hex, form_is_open,
                 order_name, order_phone_number, order_email, num_shirts, size_forms, order_shirts } = this.state;
-        /*
-        function importAll(r) {
-            let images = {};
-            r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
-            return images;
-        }
-        console.log(pic1_img_url)
-        const images = importAll(require.context('../assets/images', false, /\.(png|jpe?g|JPE?G|svg)$/));
-
-        let p1_url = images[pic1_img_url]
-        let p2_url = images[pic2_img_url]
-
-        console.log(p1_url)
-        */
 
         let p1_url = process.env.PIC_S3.concat(pic1_img_url)
         let p2_url = process.env.PIC_S3.concat(pic2_img_url)

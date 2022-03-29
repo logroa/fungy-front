@@ -56,3 +56,28 @@ h1 {
       flex-direction: column;
   }
 }
+
+#intro {
+  display: block;
+  height: 100vh;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
+#introcomp {
+  display: block;
+}
+
+#aftercomp {
+  display: none;
+}
+
+#intro1 {
+  display: block;
+}
+
+#intro2 {
+  display: none;
+}

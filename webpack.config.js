@@ -1,5 +1,7 @@
 var path = require('path')
 const Dotenv = require('dotenv-webpack')
+const dotenv = require('dotenv')
+const webpack = require('webpack')
 
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const htmlPlugin = new HtmlWebPackPlugin({
@@ -7,8 +9,16 @@ const htmlPlugin = new HtmlWebPackPlugin({
  filename: "./index.html"
 });
 
-const CopyPlugin = require("copy-webpack-plugin")
+const CopyPlugin = require("copy-webpack-plugin");
 
+const env = dotenv.config().parsed;
+const envKeys = Object.keys(env).reduce((prev, next) => {
+  prev[`process.env.${next}`] = JSON.stringify(env[next]);
+  return prev;
+}, {
+  'REACT_APP_BACKEND_URL': JSON.stringify(process.env.REACT_APP_BACKEND_URL),
+  'PIC_S3': JSON.stringify(process.env.PIC_S3)
+});
 
 module.exports = {
     entry: './src/index.js',
@@ -51,6 +61,6 @@ module.exports = {
                 }
             ],
         }),
-        new Dotenv()
+        new webpack.DefinePlugin(envKeys)
     ]
 }

@@ -70,7 +70,7 @@ class Intro extends React.Component {
 
 function App() {
   const coin = require('./assets/icons/pixal-coin.svg').default;
-  const api_url = process.env.REACT_APP_BACKEND_URL.concat('/api/shirts/');
+  const api_url = REACT_APP_BACKEND_URL.concat('/api/shirts/');
 
   return (
     <div className="App">

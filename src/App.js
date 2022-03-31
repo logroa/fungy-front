@@ -69,7 +69,6 @@ class Intro extends React.Component {
 }
 
 function App() {
-  const coin = require('./assets/icons/pixal-coin.svg').default;
   const api_url = REACT_APP_BACKEND_URL.concat('/api/shirts/');
 
   return (
@@ -79,7 +78,7 @@ function App() {
       </div>
       <div className='layer' id="aftercomp">
         <header className="App-header">
-          <img src={coin} className="App-logo" alt="logo" />
+          <img src={PIC_S3.concat('pixal-coin.svg')} className="App-logo" alt='logo' />
           <h1>FungeMyTees.com</h1>
         </header>
         <Closet url={api_url} className='following'/>

@@ -62,9 +62,6 @@ module.exports = {
             ],
         }),
         //new webpack.DefinePlugin(envKeys)
-        new webpack.EnvironmentPlugin({
-          'REACT_APP_BACKEND_URL': JSON.stringify(process.env.REACT_APP_BACKEND_URL),
-          'PIC_S3': JSON.stringify(process.env.PIC_S3)
-        })
+        new Dotenv()
     ]
 }

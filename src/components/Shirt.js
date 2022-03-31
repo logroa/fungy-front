@@ -110,7 +110,7 @@ class Shirt extends React.Component {
                 }
             )
         };
-        const api_url = REACT_APP_BACKEND_URL.concat('/api/order/');
+        const api_url = process.env.REACT_APP_BACKEND_URL.concat('/api/order/');
         fetch(api_url, newOrder)
             .then((response) => {
                 if (!response.ok) throw Error(response.statusText);
@@ -176,8 +176,8 @@ class Shirt extends React.Component {
         const { id, name, pic1_img_url, pic1_title, pic2_img_url, pic2_title, price, available, hex, form_is_open,
                 order_name, order_phone_number, order_email, num_shirts, size_forms, order_shirts } = this.state;
 
-        let p1_url = PIC_S3.concat(pic1_img_url)
-        let p2_url = PIC_S3.concat(pic2_img_url)
+        let p1_url = process.env.PIC_S3.concat(pic1_img_url)
+        let p2_url = process.env.PIC_S3.concat(pic2_img_url)
 
         const shirtstyle = {
             backgroundColor: hex
@@ -256,7 +256,7 @@ class Shirt extends React.Component {
                     {form}
                 </div>
                 <div id="after">
-                    <img src={PIC_S3.concat(gif_name)} alt={PIC_S3.concat(gif_name)} id="gif" />
+                    <img src={process.env.PIC_S3.concat(gif_name)} alt={process.env.PIC_S3.concat(gif_name)} id="gif" />
                 </div>
             </div>
         );

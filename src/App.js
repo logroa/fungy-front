@@ -69,7 +69,7 @@ class Intro extends React.Component {
 }
 
 function App() {
-  const api_url = REACT_APP_BACKEND_URL.concat('/api/shirts/');
+  const api_url = process.env.REACT_APP_BACKEND_URL.concat('/api/shirts/');
 
   return (
     <div className="App">
@@ -78,7 +78,7 @@ function App() {
       </div>
       <div className='layer' id="aftercomp">
         <header className="App-header">
-          <img src={PIC_S3.concat('pixal-coin.svg')} className="App-logo" alt='logo' />
+          <img src={process.env.PIC_S3.concat('pixal-coin.svg')} className="App-logo" alt='logo' />
           <h1>FungeMyTees.com</h1>
         </header>
         <Closet url={api_url} className='following'/>

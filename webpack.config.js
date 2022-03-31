@@ -10,7 +10,6 @@ const htmlPlugin = new HtmlWebPackPlugin({
 });
 
 const CopyPlugin = require("copy-webpack-plugin");
-const { web } = require('webpack');
 
 /*const env = dotenv.config().parsed;
 const envKeys = Object.keys(env).reduce((prev, next) => {

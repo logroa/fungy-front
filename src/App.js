@@ -36,14 +36,14 @@ class Intro extends React.Component {
       <div id="intro">
         <div id="intro1">
           <p>Hey, my name is <b>Richard</b>.  And I'm the Chief Culture Officer at FungeMyTees.  We specialize in 
-           both making money and looking really cool while doing it.  I bet you're wondering how I found myself in
-           such a distinguished position at such a distinguished company.  Although I could tell you story after story of
-           astute day trades, riverboat gambling conquests, and high profile government payoffs, it all boiled down, at least 
-           for me, to knowing the definition of the word “fungible”.  Yep, that's it, baby.</p>
+           making money and looking really cool while doing it.  To give you a better idea of who I am and how I found myself
+           in such a distinguished position, I could go straight down my resume, detailing story after story of
+           astute day trades, riverboat hold 'em coolers, and high profile government payoffs.  But in reality for me, 
+           it all boiled down to knowing the definition of the word “fungible”.  Yep, that's it, baby.</p>
 
           <p>Our goal here is to invest your money in various tokens, coins and other safe, high-yield locations.  Please 
-            take a look at our extensive catalogue of inspiringly political, thought-provoking apparel.  All profits will 
-            be put in your name towards a mutual fund of sorts aimed at, of course, maximizing return according to our very 
+            take a look at our extensive catalogue of politically efficacious, thought-provoking apparel.  All profits will 
+            be put in your name towards a hedgefund of sorts aimed at, of course, maximizing return according to our very 
             loose definition of “value”.  Sizable returns will be paid back to investors, and on the off chance we do squander 
             your money, you'll walk away with a shirt wearable in very few social settings!  You're welcome!  Again, my name is <b>Richard</b>.  Look 
             me up!</p>

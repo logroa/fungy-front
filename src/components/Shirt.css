@@ -95,3 +95,10 @@ hr {
 #after {
     display: none;
 }
+
+#errormessage {
+    width: 100vw;
+    padding: 30px;
+    background-color: maroon;
+    color: white;
+}

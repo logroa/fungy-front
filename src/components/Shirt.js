@@ -22,7 +22,8 @@ class Shirt extends React.Component {
             order_email: "",
             num_shirts: 1,
             size_forms: [],
-            order_shirts: {}
+            order_shirts: {},
+            error_message: ""
         };
         // will add functionality for picking shirt
         this.formTypeHandle = this.formTypeHandle.bind(this);
@@ -57,7 +58,8 @@ class Shirt extends React.Component {
                     </select> <br/>
                 </div>]            
             ],
-            order_shirts: {"size0": "S"}
+            order_shirts: {"size0": "S"},
+            error_message: ""
         });
     };
 
@@ -136,7 +138,15 @@ class Shirt extends React.Component {
                     order_shirts: {"size0": "S"}                   
                 });
             })
-            .catch((error) => console.log(error));
+            .catch((error) => {
+                console.log(error)
+                if (error.data.startsWith("Problem with phone number")) {
+                    this.setState({
+                        error_message: error.data
+                    });
+                }
+                return;
+            });
 
         document.getElementById("shirtimages").style.display = "none";
         document.getElementById("shirttext").style.display = "none";
@@ -174,7 +184,7 @@ class Shirt extends React.Component {
 
     render() {
         const { id, name, pic1_img_url, pic1_title, pic2_img_url, pic2_title, price, available, hex, form_is_open,
-                order_name, order_phone_number, order_email, num_shirts, size_forms, order_shirts } = this.state;
+                order_name, order_phone_number, order_email, num_shirts, size_forms, order_shirts, error_message } = this.state;
 
         let p1_url = process.env.PIC_S3.concat(pic1_img_url)
         let p2_url = process.env.PIC_S3.concat(pic2_img_url)
@@ -258,6 +268,8 @@ class Shirt extends React.Component {
                 <div id="after">
                     <img src={process.env.PIC_S3.concat(gif_name)} alt={process.env.PIC_S3.concat(gif_name)} id="gif" />
                 </div>
+
+                {error_message && <div id="errormessage">{error_message}</div>}
             </div>
         );
     }

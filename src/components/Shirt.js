@@ -115,31 +115,11 @@ class Shirt extends React.Component {
         const api_url = process.env.REACT_APP_BACKEND_URL.concat('/api/order/');
         fetch(api_url, newOrder)
             .then((response) => {
-                if (!response.ok) throw Error(response.statusText);
+                if (!response.ok) throw Error(response);
                 return response.json();
             })
-            .then((data) => {
-                this.setState({
-                    form_is_open: false,
-                    order_name: "",
-                    order_phone_number: "",
-                    order_email: "",
-                    num_shirts: 1,
-                    size_forms: [
-                        [0,<div>
-                            <select name="size0" id="shirt-size" onChange={(event) => this.formSelectHandle(event)} required>
-                                <option value="S">S</option>
-                                <option value="M">M</option>
-                                <option value="L">L</option>
-                                <option value="XL">XL</option>
-                            </select> <br/>
-                        </div>]
-                    ],
-                    order_shirts: {"size0": "S"}                   
-                });
-            })
             .catch((error) => {
-                console.log(error)
+                console.log(error.statusText)
                 if (error.data.startsWith("Problem with phone number")) {
                     this.setState({
                         error_message: error.data,
@@ -162,6 +142,26 @@ class Shirt extends React.Component {
                     });
                 }
                 return;
+            })
+            .then((data) => {
+                this.setState({
+                    form_is_open: false,
+                    order_name: "",
+                    order_phone_number: "",
+                    order_email: "",
+                    num_shirts: 1,
+                    size_forms: [
+                        [0,<div>
+                            <select name="size0" id="shirt-size" onChange={(event) => this.formSelectHandle(event)} required>
+                                <option value="S">S</option>
+                                <option value="M">M</option>
+                                <option value="L">L</option>
+                                <option value="XL">XL</option>
+                            </select> <br/>
+                        </div>]
+                    ],
+                    order_shirts: {"size0": "S"}                   
+                });
             });
 
         document.getElementById("shirtimages").style.display = "none";

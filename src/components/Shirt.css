@@ -71,6 +71,10 @@ hr {
     box-sizing: border-box;
 }
 
+#bottomseparate {
+    display: none;
+}
+
 @media only screen and (max-width: 800px) {
     .imagesonly {
         flex-direction: column;
@@ -80,6 +84,9 @@ hr {
 @media only screen and (max-width: 600px) {
     .shirt {
         flex-direction: column;
+    }
+    #bottomseparate {
+        display: block
     }
 }
 
@@ -91,6 +98,7 @@ hr {
     .shirt {
         width: 100%;
     }
+
 }
 
 .form-opener {

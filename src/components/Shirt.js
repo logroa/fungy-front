@@ -240,7 +240,9 @@ class Shirt extends React.Component {
             form = (
                 <div id="form">
                     <br/>
+                    <br/>
                     <hr />
+                    <br/>
                     <br/>
                     <div id="formwrap">
                         <form id="order-shirt" onSubmit={(event) => this.orderShirt(event)}>
@@ -261,6 +263,10 @@ class Shirt extends React.Component {
                             <br/><input className="form-opener" style={buttonstyle} type="submit" value="Mint"/>
                         </form>
                     </div>
+                    <br/>
+                    <br/>
+                    <hr id="bottomseparate" />
+                    <br/>
                 </div>
             );
         }

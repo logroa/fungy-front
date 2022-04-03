@@ -139,7 +139,7 @@ class Shirt extends React.Component {
                     num_shirts: 1,
                     size_forms: [
                         [0,<div>
-                            <select name="size0" id="shirt-size" onChange={(event) => this.formSelectHandle(event)} required>
+                            Size <select name="size0" id="shirt-size" onChange={(event) => this.formSelectHandle(event)} required>
                                 <option value="S">S</option>
                                 <option value="M">M</option>
                                 <option value="L">L</option>
@@ -163,7 +163,7 @@ class Shirt extends React.Component {
                     num_shirts: 1,
                     size_forms: [
                         [0,<div>
-                            <select name="size0" id="shirt-size" onChange={(event) => this.formSelectHandle(event)} required>
+                            Size <select name="size0" id="shirt-size" onChange={(event) => this.formSelectHandle(event)} required>
                                 <option value="S">S</option>
                                 <option value="M">M</option>
                                 <option value="L">L</option>
@@ -189,7 +189,7 @@ class Shirt extends React.Component {
             let num = "size".concat(x.toString())
             size_options.push(
                 [x, <div>
-                    <select name={num} id="shirt-size" onChange={(event) => this.formSelectHandle(event)} required>
+                    Size <select name={num} id="shirt-size" onChange={(event) => this.formSelectHandle(event)} required>
                         <option value="S">S</option>
                         <option value="M">M</option>
                         <option value="L">L</option>

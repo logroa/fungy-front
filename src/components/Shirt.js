@@ -90,10 +90,18 @@ class Shirt extends React.Component {
 
     openForm() {
         if (this.state.form_is_open) {
-            this.setState({ form_is_open: false });
+            this.setState({ 
+                form_is_open: false,
+                error_message: "",
+                is_error: false
+            });
         }
         else {
-            this.setState({ form_is_open: true})
+            this.setState({ 
+                form_is_open: true,
+                error_message: "",
+                is_error: false
+            });
         }
     }
 
@@ -115,36 +123,14 @@ class Shirt extends React.Component {
         const api_url = process.env.REACT_APP_BACKEND_URL.concat('/api/order/');
         fetch(api_url, newOrder)
             .then((response) => {
-                if (!response.ok) throw Error(response.statusText);
+                if (!response.ok){
+                    console.log(response)
+                    throw Error(response);
+                }
                 return response.json();
             })
             .then((data) => {
-                if (data.status == "error") {
-                    console.log(data)
-                    if (data.data.startsWith("Problem with phone number")) {
-                        this.setState({
-                            error_message: error.data,
-                            form_is_open: false,
-                            order_name: "",
-                            order_phone_number: "",
-                            order_email: "",
-                            num_shirts: 1,
-                            size_forms: [
-                                [0,<div>
-                                    <select name="size0" id="shirt-size" onChange={(event) => this.formSelectHandle(event)} required>
-                                        <option value="S">S</option>
-                                        <option value="M">M</option>
-                                        <option value="L">L</option>
-                                        <option value="XL">XL</option>
-                                    </select> <br/>
-                                </div>]
-                            ],
-                            order_shirts: {"size0": "S"} 
-                        });
-                    }
-                    return;
-                }
-
+                console.log(data)
                 this.setState({
                     form_is_open: false,
                     order_name: "",
@@ -163,14 +149,32 @@ class Shirt extends React.Component {
                     ],
                     order_shirts: {"size0": "S"}                   
                 });
+                document.getElementById("shirtimages").style.display = "none";
+                document.getElementById("shirttext").style.display = "none";
+                document.getElementById("after").style.display = "block";
             })
-            .catch((error) => console.log(error));
-
-        document.getElementById("shirtimages").style.display = "none";
-        document.getElementById("shirttext").style.display = "none";
-        document.getElementById("after").style.display = "block";
-
-        event.preventDefault();
+            .catch((error) => {
+                this.setState({
+                    error_message: "Unable to complete order: problem with phone number entered",
+                    form_is_open: false,
+                    order_name: "",
+                    order_phone_number: "",
+                    order_email: "",
+                    num_shirts: 1,
+                    size_forms: [
+                        [0,<div>
+                            <select name="size0" id="shirt-size" onChange={(event) => this.formSelectHandle(event)} required>
+                                <option value="S">S</option>
+                                <option value="M">M</option>
+                                <option value="L">L</option>
+                                <option value="XL">XL</option>
+                            </select> <br/>
+                        </div>]
+                    ],
+                    order_shirts: {"size0": "S"}                   
+                });
+            });
+            event.preventDefault();
     }
 
     sizeRenderer() {

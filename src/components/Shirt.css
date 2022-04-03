@@ -97,6 +97,8 @@ hr {
 }
 
 #errormessage {
+    position: absolute;
+    bottom: 0;
     width: 100vw;
     padding: 30px;
     background-color: maroon;

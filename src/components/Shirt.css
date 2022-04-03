@@ -10,6 +10,7 @@
 
 #shirttext {
     width: 50%;
+    padding: 20px;
 }
 
 #shirtimages {
@@ -50,7 +51,18 @@ hr {
 }
 
 #order-shirt {
-    text-align: right;
+    text-align: left;
+}
+
+#form {
+    max-width: 300px;
+    margin: auto;
+}
+
+#formwrap {
+    width: fit-content;
+    block-size: fit-content;
+    margin: auto;
 }
 
 .textformbox {

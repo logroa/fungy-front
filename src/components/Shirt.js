@@ -242,23 +242,25 @@ class Shirt extends React.Component {
                     <br/>
                     <hr />
                     <br/>
-                    <form id="order-shirt" onSubmit={(event) => this.orderShirt(event)}>
-                        Name <input className="textformbox" type="text" name="name" onChange={(event) => this.setState({ order_name: event.target.value })} required/> <br/>
-                        Email <input className="textformbox" type="text" name="email" onChange={(event) => this.setState({ order_email: event.target.value })} required/> <br/>
-                        Phone Number <input className="textformbox" type="text" name="phone_number" onChange={(event) => this.setState({ order_phone_number: event.target.value })} required/> <br/>
-                        How many?   <select name="shirt-num" id="shirt-num" onChange={() => this.sizeRenderer()} required>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                        </select>
+                    <div id="formwrap">
+                        <form id="order-shirt" onSubmit={(event) => this.orderShirt(event)}>
+                            Name <br/><input className="textformbox" type="text" name="name" onChange={(event) => this.setState({ order_name: event.target.value })} required/> <br/>
+                            Email <br/><input className="textformbox" type="text" name="email" onChange={(event) => this.setState({ order_email: event.target.value })} required/> <br/>
+                            Phone Number <br/><input className="textformbox" type="text" name="phone_number" onChange={(event) => this.setState({ order_phone_number: event.target.value })} required/> <br/>
+                            How many? <br/><select name="shirt-num" id="shirt-num" onChange={() => this.sizeRenderer()} required>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
 
-                        <div id="sizes">
-                            {shirt_sizes}
-                        </div>
+                            <div id="sizes">
+                                {shirt_sizes}
+                            </div>
 
-                        <br/><input className="form-opener" style={buttonstyle} type="submit" value="Mint"/>
-                    </form>
+                            <br/><input className="form-opener" style={buttonstyle} type="submit" value="Mint"/>
+                        </form>
+                    </div>
                 </div>
             );
         }
@@ -272,6 +274,8 @@ class Shirt extends React.Component {
                     <button className="form-opener" style={buttonstyle} onClick={() => {this.openForm()}}>
                         Mint Yours
                     </button>
+
+                    {form}
                 </div>
                 <div id='shirtimages'>
                     <div className='imagesonly'>
@@ -285,7 +289,6 @@ class Shirt extends React.Component {
                         </div>
                     </div>
 
-                    {form}
                 </div>
                 <div id="after">
                     <img src={process.env.PIC_S3.concat(gif_name)} alt={process.env.PIC_S3.concat(gif_name)} id="gif" />

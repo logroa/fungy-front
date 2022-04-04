@@ -52,7 +52,7 @@ class Intro extends React.Component {
           <br/>
           <button className="gatelock" onClick={() => this.introSwitch("1", "2")} >Read more</button>
           <br/> <br/>
-          <button className="gatelock" onClick={() => this.openGate()} >No thanks</button>
+          <button className="gatelock" onClick={() => this.openGate()} >No thanks, just show me the shirts, guy</button>
           <br /> <br /> <br />
           <a href="https://www.chuckecheese.com/experience/springtastic-celebration/?gclid=CjwKCAjwuYWSBhByEiwAKd_n_pV0gcymV9yBgun4KMCYv_j_wazNYyLL45I8L2eW6fmhooBzs9DVHxoCneQQAvD_BwE&gclsrc=aw.ds">
             Our credentials

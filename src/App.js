@@ -51,9 +51,9 @@ class Intro extends React.Component {
 
           <p>
             This opportunity comes to you free of risk.  All this site is doing presenting the opportunity to confirm interest 
-            politically efficacious, thought-provoking apparel, invest in cryptocurrency, and join a community full of former 
+            in politically efficacious, thought-provoking apparel, invest in cryptocurrency, and join a community full of former 
             US Secretaries of Agriculture, martial arts champions, and degenerate sportsbettors free of charge. It's similar to 
-            LinkedIn but we connect you to people you might actually like! You can pay when shirts are printed and 
+            LinkedIn but we connect you to people you might actually like! You pay when shirts are printed and 
             tokens are minted, if you are still even interested.
           </p>
             
@@ -61,8 +61,8 @@ class Intro extends React.Component {
             All profits will be put in your 
             name towards a cryptocurrency hedgefund of sorts.  Is this an excuse to day-trade crypto with my buddies?  Absolutely. 
             But it's also about making friends and making you think I'm really smart. Sizable returns will be paid back to investors, 
-            and on the off chance we do squander your money, you'll walk away with a shirt wearable in very few social settings!  You're 
-            welcome!  Again, my name is <b>Oscar</b>. Look me up!
+            and on the off chance we do squander your money and you hate all your new friends (likely), you'll walk away with a shirt 
+            wearable in very few social settings!  You're welcome!  Again, my name is <b>Oscar</b>. Look me up!
           </p>
 
           <p>Click below to read more about how we got here and what we're hoping to do!</p>

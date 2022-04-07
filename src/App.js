@@ -35,6 +35,8 @@ class Intro extends React.Component {
     return (
       <div id="intro">
         <div id="intro1">
+          <h3>TLDR: t-shirt and crypto club, mom said it would help me make friends</h3>
+
           <p>Hey, my name is <b>Oscar</b>. And I'm the Chief Culture Officer at FungeMyTees. We specialize in 
            making money and looking really cool while doing it. To give you a better idea of who I am and how I found myself
            in such a distinguished position, I could go straight down my resume, detailing story after story of

@@ -51,7 +51,7 @@ class Intro extends React.Component {
           <p>This opportunity comes to you free of risk.  All this site is doing presenting the opportunity to confirm interest 
             politically efficacious, thought-provoking apparel, invest in cryptocurrency, or join a community full of former 
             US Secretaries of Agriculture, martial arts champions, and degenerate sportsbettors free of charge. Payment will come
-            later when shirts are printed and tokens are minted, if you are still even interested.  All profits will be put in your 
+            soon when shirts are printed and tokens are minted, if you are still even interested.  All profits will be put in your 
             name towards a cryptocurrency hedgefund of sorts.  Is this an excuse to day-trade crypto with my buddies?  Absolutely. 
             But it's also about making friends and making you think I'm really smart. Sizable returns will be paid back to investors, 
             and on the off chance we do squander your money, you'll walk away with a shirt wearable in very few social settings!  You're 

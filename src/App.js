@@ -46,21 +46,15 @@ class Intro extends React.Component {
           <p>
             What we are doing is selling t-shirts with a side of digital currency. Or vice 
             versa, whichever you prefer. Every shirt bought comes with its own unique NFT that will be made available to the owner
-            of the corresponding shirt. Does this physical attachment defeat the purpose of the nonfungible token we're 
-            providing? Probably, but we can't say for sure. That would require us actually understanding them and how they 
-            work, which, I cannot emphasize enough, we don't.
+            of the corresponding shirt. And you don't even pay right now.  This jawn is just here to confirm your interest. 
+            You pay when shirts are printed and tokens are minted, if you are still even interested. Does this physical attachment 
+            defeat the purpose of the nonfungible token we're providing? Probably, but we can't say for sure. That would require 
+            us actually understanding them and how they work, which, I cannot emphasize enough, we do not.
           </p>
 
           <p>
-            This opportunity comes to you free of risk.  All this site is doing presenting the opportunity to confirm interest 
-            in politically efficacious, thought-provoking apparel, invest in cryptocurrency, and join a community full of former 
-            US Secretaries of Agriculture, martial arts champions, and degenerate sportsbettors free of charge. It's similar to 
-            LinkedIn but we connect you to people you might actually like! You pay when shirts are printed and 
-            tokens are minted, if you are still even interested.
-          </p>
-            
-          <p>
-            All profits will be put in your 
+            Come join our community of Rhodes Scholars, martial arts champions, and degenerate sportsbettors. It's similar to 
+            LinkedIn but we connect you to people you might actually like! All profits will be put in your 
             name towards a cryptocurrency hedgefund of sorts.  Is this an excuse to day-trade crypto with my buddies?  Absolutely. 
             But it's also about making friends and making you think I'm really smart. Sizable returns will be paid back to investors, 
             and on the off chance we do squander your money and you hate all your new friends (likely), you'll walk away with a shirt 

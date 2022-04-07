@@ -76,6 +76,7 @@ class Intro extends React.Component {
           <a href="https://www.chuckecheese.com/experience/springtastic-celebration/?gclid=CjwKCAjwuYWSBhByEiwAKd_n_pV0gcymV9yBgun4KMCYv_j_wazNYyLL45I8L2eW6fmhooBzs9DVHxoCneQQAvD_BwE&gclsrc=aw.ds">
             Our credentials
           </a>
+          <br/><br/>
         </div>
         <div id="intro2">
           Just kidding lol

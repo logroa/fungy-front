@@ -42,7 +42,7 @@ class Intro extends React.Component {
            it all boiled down to knowing the definition of the word “fungible”. Yep, that's it, baby.</p>
 
           <p>What we're asking of you here is to join our community. Like any community, financial institution, or clothing
-            provider, our goal is to simply provide value.  We are selling t-shirts with a side a digital currency. Or vice 
+            provider, our goal is to simply provide value.  We are selling t-shirts with a side of digital currency. Or vice 
             versa if you prefer. Every shirt bought comes with its own unique NFT that will be made available to the owner
             of the corresponding shirt. Does this physical attachment defeat the purpose of the nonfungible token we're 
             providing? Probably, but we can't say for sure. That would require us actually understanding them and how they 

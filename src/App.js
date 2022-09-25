@@ -63,7 +63,7 @@ class Intro extends React.Component {
         <br/>
         <br/>
         <br/>
-        <a href={site_url}>
+        <a href={site_url} id="jointlink">
             <img src={joint} className = "App-logo" alt="joint" />
         </a>
         <br/>

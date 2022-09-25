@@ -55,7 +55,8 @@ class Intro extends React.Component {
             <br/>
 
             Are we heroes?  Yeah, probably.  Not everyone can use weed-themed t-shirts and cryptocurrency to
-            help children.  I assume most could.  But, hey, that's not everyone.
+            help children.  I assume most could.  But, hey, that's not everyone.  And that's also kind of the point.
+            Even the biggest jackasses can do something to help someone.
         </div>
         <br/>
         <br/>

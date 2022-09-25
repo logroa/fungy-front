@@ -31,51 +31,47 @@ class Intro extends React.Component {
 
   render() {
     const { current_tab } = this.state;
-
+    const joint = require('./assets/icons/weed-joint-png.png').default;
+    const site_url = "https://shop.loud.global/products/grade-aa-baked-potato-tee";
     return (
       <div id="intro">
-        <div id="intro1">
-          <h3>TLDR: t-shirt and crypto club, mom said it would help me make friends</h3>
+        <div>
+            <h1><b>Funging tees</b> for <a href="https://ozonehouse.org/">Ozone House</a></h1>
 
-          <p>Hey, my name is <b>Oscar</b>. And I'm the Chief Culture Officer at FungeMyTees. We specialize in 
-           making money and looking really cool while doing it. To give you a better idea of who I am and how I found myself
-           in such a distinguished position, I could go straight down my resume, detailing story after story of
-           astute day trades, riverboat hold 'em coolers, and high profile government payoffs. But in reality for me, 
-           it all boiled down to knowing the definition of the word “fungible”. Yep, that's it, baby.</p>
+            <br/>
 
-          <p>
-            What we are doing is selling t-shirts with a side of digital currency. Or vice 
-            versa, whichever you prefer. Every shirt bought comes with its own unique NFT that will be made available to the owner
-            of the corresponding shirt. And you don't even pay right now.  This jawn is just here to confirm your interest. 
-            You pay when shirts are printed and tokens are minted, if you are still even interested. Does this physical attachment 
-            defeat the purpose of the nonfungible token we're providing? Probably, but we can't say for sure. That would require 
-            us actually understanding them and how they work, which, I cannot emphasize enough, we do not.
-          </p>
+            It's a youth shelter and outreach center in Washtenaw County that provides services such as food
+            and housing , educational support, mental health services, a 24/7 crisis line, life skills training,
+            emergency services, job training, substance abuse support, transportation, and more.
 
-          <p>
-            Come join our community of Rhodes Scholars, martial arts champions, and degenerate sportsbettors. It's similar to 
-            LinkedIn but we connect you to people you might actually like! All profits will be put in your 
-            name towards a cryptocurrency hedgefund of sorts.  Is this an excuse to day-trade crypto with my buddies?  Absolutely. 
-            But it's also about making friends and making you think I'm really smart. Sizable returns will be paid back to investors, 
-            and on the off chance we do squander your money and you hate all your new friends (likely), you'll walk away with a shirt 
-            wearable in very few social settings!  You're welcome!  Again, my name is <b>Oscar</b>. Look me up!
-          </p>
+            <br/>
+            <br/>
 
-          <p>Click below to read more about how we got here and what we're hoping to do!</p>
-          <br/>
-          <button className="gatelock" onClick={() => this.introSwitch("1", "2")} >Read more</button>
-          <br/> <br/>
-          <button className="gatelock" onClick={() => this.openGate()} >No thanks, just show me the shirts, guy</button>
-          <br /> <br /> <br />
-          <a href="https://www.chuckecheese.com/experience/springtastic-celebration/?gclid=CjwKCAjwuYWSBhByEiwAKd_n_pV0gcymV9yBgun4KMCYv_j_wazNYyLL45I8L2eW6fmhooBzs9DVHxoCneQQAvD_BwE&gclsrc=aw.ds">
-            Our credentials
-          </a>
-          <br/><br/>
+            All profits made from these shirts go directly to creating an immediate impact in the Ann Arbor
+            community.  At least I think.  Financial responsibility, book keeping, and just organization in general
+            aren't our strong suits.  But we're going to give a try.  You're welcome, kids.
+
+            <br/>
+            <br/>
+
+            Are we heroes?  Yeah, probably.  Not everyone can use weed-themed t-shirts and cryptocurrency to
+            help children.  I assume most could.  But, hey, that's not everyone.
         </div>
-        <div id="intro2">
-          Just kidding lol
-          <br /><br />
-          <button className="gatelock" onClick={() => this.introSwitch("2", "1")} >Yikes</button>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <a href={site_url}>
+            <img src={joint} className = "App-logo" alt="joint" />
+        </a>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <div>
+            Hit the joint and help some kids.
         </div>
       </div>
     )

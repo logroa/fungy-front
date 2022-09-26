@@ -49,7 +49,7 @@ class Intro extends React.Component {
 
             All profits made from these shirts go directly to creating an immediate impact in the Ann Arbor
             community.  At least I think.  Financial responsibility, book keeping, and just organization in general
-            aren't our strong suits.  But we're going to give a try.  You're welcome, kids.
+            aren't our strong suits.  But we're going to give it a try.  You're welcome, kids.
 
             <br/>
             <br/>

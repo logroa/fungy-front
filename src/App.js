@@ -78,7 +78,7 @@ function App() {
   return (
     <div className="App">
 
-      <meta http-equiv="refresh" content="5;url=https://shop.loud.global/products/the-immortal-irwin-s-s-tee" />
+      <meta http-equiv="refresh" content="3;url=https://shop.loud.global/products/the-immortal-irwin-s-s-tee" />
       <audio src={process.env.PIC_S3.concat("Crikey.mp3")} controls autoPlay loop style={{display:"none"}}/>
 
       <div className='layer' id="introcomp">

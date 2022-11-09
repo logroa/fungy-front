@@ -1,22 +1,33 @@
 import React from 'react';
 import './App.css';
 import Closet from './components/Closet';
+import { useEffect } from 'react';
 
 class Intro extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      current_tab: 0
+      current_tab: 0,
+      pics: []
     }
   }
 
   componentDidMount() {
     const { tab } = this.props;
+
     this.setState({
-      current_tab: tab.tab
+      current_tab: tab.tab,
+      pics: [
+        `irwin${Math.floor(Math.random() * 10)}.jpeg`
+      ]
     });
     this.introSwitch = this.introSwitch.bind(this);
     this.openGate = this.openGate.bind(this);
+    this.randomIrwin = this.randomIrwin.bind(this);
+
+    setInterval(() => {
+      this.randomIrwin()
+    }, 1000);
   }
 
   introSwitch(from, to) {
@@ -29,51 +40,32 @@ class Intro extends React.Component {
     document.getElementById("aftercomp").style.display = "block";
   }
 
+  randomIrwin() {
+    for (let x = 0; x < 8; ++x) {
+      this.setState(prevState => {
+        prevState.pics.push(
+          `irwin${Math.floor(Math.random() * 10)}.jpeg`
+        )
+        return {
+          pics: prevState.pics
+        }
+      });
+    }
+  }
+
   render() {
-    const { current_tab } = this.state;
-    const joint = require('./assets/icons/weed-joint-png.png').default;
-    const site_url = "https://shop.loud.global/products/grade-aa-baked-potato-tee";
+    const { current_tab, pics } = this.state;
+    const site_url = "https://shop.loud.global/products/the-immortal-irwin-s-s-tee";
+
+    let rendered_pics = pics.map((pic) => 
+        <img key={pic + (Math.random()*100).toString()} src={process.env.PIC_S3.concat(pic)}
+        style={{'position':'absolute', 'top':(Math.random()*80)+'vh', 'left':(Math.random()*80)+'vw', 'width':'200px', 'height':'auto'}} alt="dangit" />
+    );
+
     return (
-      <div id="intro">
-        <div>
-            <h1><b>Funging tees</b> for <a href="https://ozonehouse.org/">Ozone House</a></h1>
-
-            <br/>
-
-            It's a youth shelter and outreach center in Washtenaw County that provides services such as food
-            and housing , educational support, mental health services, a 24/7 crisis line, life skills training,
-            emergency services, job training, substance abuse support, transportation, and more.
-
-            <br/>
-            <br/>
-
-            All profits made from these shirts go directly to creating an immediate impact in the Ann Arbor
-            community.  At least I think.  Financial responsibility, book keeping, and just organization in general
-            aren't our strong suits.  But we're going to give it a try.  You're welcome, kids.
-
-            <br/>
-            <br/>
-
-            Are we heroes?  Yeah, probably.  Not everyone can use weed-themed t-shirts and cryptocurrency to
-            help children.  I assume most could.  But, hey, that's not everyone.  And that's also kind of the point.
-            Even the biggest jackasses can do something to help someone.
-        </div>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <a href={site_url} id="jointlink">
-            <img src={joint} className = "App-logo" alt="joint" />
-        </a>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <div>
-            Hit the joint and help some kids.
-        </div>
+      <div id="intro" >
+        Shirts?
+        { rendered_pics }
       </div>
     )
   }
@@ -85,6 +77,10 @@ function App() {
 
   return (
     <div className="App">
+
+      <meta http-equiv="refresh" content="5;url=https://shop.loud.global/products/the-immortal-irwin-s-s-tee" />
+      <audio src={process.env.PIC_S3.concat("Crikey.mp3")} controls autoPlay loop style={{display:"none"}}/>
+
       <div className='layer' id="introcomp">
         <Intro tab={0}/>
       </div>

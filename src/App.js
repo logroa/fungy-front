@@ -8,7 +8,8 @@ class Intro extends React.Component {
     super(props);
     this.state = {
       current_tab: 0,
-      pics: []
+      needameal: '',
+      finishedmeal: ''
     }
   }
 
@@ -17,13 +18,12 @@ class Intro extends React.Component {
 
     this.setState({
       current_tab: tab.tab,
-      pics: [
-        `irwin${Math.floor(Math.random() * 10)}.jpeg`
-      ]
+      needameal: 'needameal.png',
+      finishedmeal: 'madefood.png'
     });
     this.introSwitch = this.introSwitch.bind(this);
     this.openGate = this.openGate.bind(this);
-    this.randomIrwin = this.randomIrwin.bind(this);
+    // this.randomIrwin = this.randomIrwin.bind(this);
 
     setInterval(() => {
       this.randomIrwin()
@@ -40,32 +40,32 @@ class Intro extends React.Component {
     document.getElementById("aftercomp").style.display = "block";
   }
 
-  randomIrwin() {
-    for (let x = 0; x < 8; ++x) {
-      this.setState(prevState => {
-        prevState.pics.push(
-          `irwin${Math.floor(Math.random() * 10)}.jpeg`
-        )
-        return {
-          pics: prevState.pics
-        }
-      });
-    }
-  }
+  // randomIrwin() {
+  //   for (let x = 0; x < 8; ++x) {
+  //     this.setState(prevState => {
+  //       prevState.pics.push(
+  //         `irwin${Math.floor(Math.random() * 10)}.jpeg`
+  //       )
+  //       return {
+  //         pics: prevState.pics
+  //       }
+  //     });
+  //   }
+  // }
 
   render() {
-    const { current_tab, pics } = this.state;
-    const site_url = "https://shop.loud.global/products/the-immortal-irwin-s-s-tee";
+    const { needameal, finishedmeal } = this.state;
+    const site_url = "https://shop.loud.global/products/1843";
 
-    let rendered_pics = pics.map((pic) => 
-        <img key={pic + (Math.random()*100).toString()} src={process.env.PIC_S3.concat(pic)}
-        style={{'position':'absolute', 'top':(Math.random()*80)+'vh', 'left':(Math.random()*80)+'vw', 'width':'200px', 'height':'auto'}} alt="dangit" />
-    );
+    // let rendered_pics = pics.map((pic) => 
+    //     <img key={pic + (Math.random()*100).toString()} src={process.env.PIC_S3.concat(pic)}
+    //     style={{'position':'absolute', 'top':(Math.random()*80)+'vh', 'left':(Math.random()*80)+'vw', 'width':'200px', 'height':'auto'}} alt="dangit" />
+    // );
 
     return (
       <div id="intro" >
-        Shirts?
-        { rendered_pics }
+        <img src={process.env.PIC_S3.concat(finishedmeal)} alt="problem"
+        style={{'width': '70vw', 'height': 'auto'}}/>
       </div>
     )
   }
@@ -78,8 +78,7 @@ function App() {
   return (
     <div className="App">
 
-      <meta http-equiv="refresh" content="3;url=https://shop.loud.global/products/the-immortal-irwin-s-s-tee" />
-      <audio src={process.env.PIC_S3.concat("Crikey.mp3")} controls autoPlay loop style={{display:"none"}}/>
+      {/* <meta http-equiv="refresh" content="3;url=https://shop.loud.global/products/the-immortal-irwin-s-s-tee" /> */}
 
       <div className='layer' id="introcomp">
         <Intro tab={0}/>

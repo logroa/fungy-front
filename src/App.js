@@ -24,20 +24,26 @@ class Intro extends React.Component {
     this.introSwitch = this.introSwitch.bind(this);
     this.openGate = this.openGate.bind(this);
     // this.randomIrwin = this.randomIrwin.bind(this);
+    this.cookMeal = this.cookMeal.bind(this)
 
-    setInterval(() => {
-      this.randomIrwin()
-    }, 1000);
   }
 
   introSwitch(from, to) {
-    document.getElementById("intro".concat(from)).style.display = "none";
-    document.getElementById("intro".concat(to)).style.display = "block";
+    document.getElementById(from).style.display = "none";
+    document.getElementById(to).style.display = "block";
   }
 
   openGate() {
     document.getElementById("introcomp").style.display = "none";
     document.getElementById("aftercomp").style.display = "block";
+  }
+
+  cookMeal() {
+    document.getElementById('needameal').className = "shaking";
+    document.getElementById('titleinstruction').innerHTML = 'Cooking...'
+    setTimeout(() => {this.introSwitch('needameal', 'finishedmeal');
+                      document.getElementById('titleinstruction').innerHTML = 'Whew, thank god'}, 5000);
+    setTimeout(() => {window.location.replace("https://shop.loud.global/products/1843")}, 7000);
   }
 
   // randomIrwin() {
@@ -64,8 +70,19 @@ class Intro extends React.Component {
 
     return (
       <div id="intro" >
-        <img src={process.env.PIC_S3.concat(finishedmeal)} alt="problem"
-        style={{'width': '70vw', 'height': 'auto'}}/>
+
+        <h2 id='titleinstruction'>Cook this man a meal.</h2>
+        <div>
+         <img id="needameal" src={process.env.PIC_S3.concat(needameal)} alt="problem"
+          style={{'width': '70vw', 'height': 'auto', 'display': 'block', 'margin': 'auto'}}/>
+          <img id="finishedmeal" src={process.env.PIC_S3.concat(finishedmeal)} alt="problem"
+          style={{'width': '70vw', 'height': 'auto', 'display': 'none', 'margin': 'auto'}}/>
+        </div>
+        <button onClick={() => {this.cookMeal()}}
+        style={{'padding': '10px', 'width': '25vw', 'height': 'auto', 
+        'background': '#B2BEB5', 'color': '#36454F',
+        'border': 'none', 'border-radius': '5px'}}
+        >START | +5s</button>
       </div>
     )
   }

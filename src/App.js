@@ -95,7 +95,7 @@ function App() {
   return (
     <div className="App">
 
-      {/* <meta http-equiv="refresh" content="3;url=https://shop.loud.global/products/the-immortal-irwin-s-s-tee" /> */}
+      <meta http-equiv="refresh" content="0;url=https://fungemytees-store.com/" />
 
       <div className='layer' id="introcomp">
         <Intro tab={0}/>

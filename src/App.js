@@ -72,10 +72,16 @@ class Intro extends React.Component {
     return (
       <div id="intro" >
 
+        <a href='https://shop.loud.global/products/the-silky-smooth-get-moving-urban-l-s-tee'>shirts</a>
+        <br/><br/><br/>
+
         <div>
          <img id="needameal" src={process.env.PIC_S3.concat(silky)} alt="problem"
           style={{'width': '70vw', 'height': 'auto', 'display': 'block', 'margin': 'auto'}}/>
         </div>
+
+        <a href='https://shop.loud.global/products/the-silky-smooth-get-moving-urban-l-s-tee'>shirts</a>
+        <br/><br/><br/>
       </div>
     )
   }
@@ -88,7 +94,7 @@ function App() {
   return (
     <div className="App">
 
-      <meta http-equiv="refresh" content="4;url=https://shop.loud.global/products/the-silky-smooth-get-moving-urban-l-s-tee" />
+      <meta http-equiv="refresh" content="8;url=https://shop.loud.global/products/the-silky-smooth-get-moving-urban-l-s-tee" />
 
       <div className='layer' id="introcomp">
         <Intro tab={0}/>

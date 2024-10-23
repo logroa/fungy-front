@@ -19,7 +19,8 @@ class Intro extends React.Component {
     this.setState({
       current_tab: tab.tab,
       needameal: 'needameal.png',
-      finishedmeal: 'madefood.png'
+      finishedmeal: 'madefood.png',
+      silky: 'silky-smooth-landing-page.png'
     });
     this.introSwitch = this.introSwitch.bind(this);
     this.openGate = this.openGate.bind(this);
@@ -43,7 +44,7 @@ class Intro extends React.Component {
     document.getElementById('titleinstruction').innerHTML = 'Cooking...'
     setTimeout(() => {this.introSwitch('needameal', 'finishedmeal');
                       document.getElementById('titleinstruction').innerHTML = 'Whew, thank god'}, 5000);
-    setTimeout(() => {window.location.replace("https://shop.loud.global/products/1843")}, 7000);
+    setTimeout(() => {window.location.replace("https://shop.loud.global/products/the-silky-smooth-get-moving-urban-l-s-tee")}, 7000);
   }
 
   // randomIrwin() {
@@ -60,8 +61,8 @@ class Intro extends React.Component {
   // }
 
   render() {
-    const { needameal, finishedmeal } = this.state;
-    const site_url = "https://shop.loud.global/products/1843";
+    const { needameal, finishedmeal, silky } = this.state;
+    const site_url = "https://shop.loud.global/products/the-silky-smooth-get-moving-urban-l-s-tee";
 
     // let rendered_pics = pics.map((pic) => 
     //     <img key={pic + (Math.random()*100).toString()} src={process.env.PIC_S3.concat(pic)}
@@ -71,18 +72,10 @@ class Intro extends React.Component {
     return (
       <div id="intro" >
 
-        <h2 id='titleinstruction'>Cook this man a meal.</h2>
         <div>
-         <img id="needameal" src={process.env.PIC_S3.concat(needameal)} alt="problem"
+         <img id="needameal" src={process.env.PIC_S3.concat(silky)} alt="problem"
           style={{'width': '70vw', 'height': 'auto', 'display': 'block', 'margin': 'auto'}}/>
-          <img id="finishedmeal" src={process.env.PIC_S3.concat(finishedmeal)} alt="problem"
-          style={{'width': '70vw', 'height': 'auto', 'display': 'none', 'margin': 'auto'}}/>
         </div>
-        <button onClick={() => {this.cookMeal()}}
-        style={{'padding': '10px', 'width': '25vw', 'height': 'auto', 
-        'background': '#B2BEB5', 'color': '#36454F',
-        'border': 'none', 'border-radius': '5px'}}
-        >START | +5s</button>
       </div>
     )
   }
@@ -95,7 +88,7 @@ function App() {
   return (
     <div className="App">
 
-      <meta http-equiv="refresh" content="0;url=https://fungemytees-store.com/" />
+      <meta http-equiv="refresh" content="4;url=https://shop.loud.global/products/the-silky-smooth-get-moving-urban-l-s-tee" />
 
       <div className='layer' id="introcomp">
         <Intro tab={0}/>
